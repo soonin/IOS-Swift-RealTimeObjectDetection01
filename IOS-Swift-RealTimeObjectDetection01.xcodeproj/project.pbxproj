@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA326F972075A24F0032F105 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FA326F962075A0D90032F105 /* SqueezeNet.mlmodel */; };
+		FA326F992075AEB90032F105 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FA326F982075AE9D0032F105 /* Resnet50.mlmodel */; };
 		FA4FB572207462CD007E0B1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4FB571207462CD007E0B1F /* AppDelegate.swift */; };
 		FA4FB574207462CD007E0B1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4FB573207462CD007E0B1F /* ViewController.swift */; };
 		FA4FB577207462CD007E0B1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4FB575207462CD007E0B1F /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA326F962075A0D90032F105 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
+		FA326F982075AE9D0032F105 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		FA4FB56E207462CD007E0B1F /* IOS-Swift-RealTimeObjectDetection01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS-Swift-RealTimeObjectDetection01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA4FB571207462CD007E0B1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA4FB573207462CD007E0B1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 				FA4FB575207462CD007E0B1F /* Main.storyboard */,
 				FA4FB578207462CD007E0B1F /* Assets.xcassets */,
 				FA4FB57A207462CD007E0B1F /* LaunchScreen.storyboard */,
+				FA326F962075A0D90032F105 /* SqueezeNet.mlmodel */,
+				FA326F982075AE9D0032F105 /* Resnet50.mlmodel */,
 				FA4FB57D207462CD007E0B1F /* Info.plist */,
 			);
 			path = "IOS-Swift-RealTimeObjectDetection01";
@@ -136,6 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA326F992075AEB90032F105 /* Resnet50.mlmodel in Sources */,
+				FA326F972075A24F0032F105 /* SqueezeNet.mlmodel in Sources */,
 				FA4FB574207462CD007E0B1F /* ViewController.swift in Sources */,
 				FA4FB572207462CD007E0B1F /* AppDelegate.swift in Sources */,
 			);
@@ -275,6 +283,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				COREML_CODEGEN_LANGUAGE = Swift;
+				DEVELOPMENT_TEAM = WAHXQH4SC5;
 				INFOPLIST_FILE = "IOS-Swift-RealTimeObjectDetection01/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pooya.brain.dev.IOS-Swift-RealTimeObjectDetection01";
@@ -289,6 +299,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				COREML_CODEGEN_LANGUAGE = Swift;
+				DEVELOPMENT_TEAM = WAHXQH4SC5;
 				INFOPLIST_FILE = "IOS-Swift-RealTimeObjectDetection01/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pooya.brain.dev.IOS-Swift-RealTimeObjectDetection01";

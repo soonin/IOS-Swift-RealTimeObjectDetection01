@@ -16,7 +16,8 @@ class ViewController: UIViewController , AVCaptureVideoDataOutputSampleBufferDel
 
     @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var viewLable: UILabel!
-  var previewLayer: AVCaptureVideoPreviewLayer?
+    
+    var previewLayer: AVCaptureVideoPreviewLayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()

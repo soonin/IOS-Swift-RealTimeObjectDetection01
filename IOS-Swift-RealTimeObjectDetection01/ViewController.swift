@@ -24,44 +24,43 @@ class ViewController: UIViewController , AVCaptureVideoDataOutputSampleBufferDel
 
         updateLable(newLable: "new lable")
         
-    //Start the Camera
-    let captureSession = AVCaptureSession()
-    captureSession.sessionPreset = .photo
+        //Start the Camera
+        let captureSession = AVCaptureSession()
+        captureSession.sessionPreset = .photo
     
-    // get back camera as Video Capture Device
-    guard let captureDevice = AVCaptureDevice.default(for: .video)
-        else { self.quickErr(myLine: #line,inputStr: "") ; return }
+        // get back camera as Video Capture Device
+        guard let captureDevice = AVCaptureDevice.default(for: .video)
+            else { self.quickErr(myLine: #line,inputStr: "") ; return }
         
-    try? captureDevice.lockForConfiguration()
-    captureDevice.activeVideoMinFrameDuration =  CMTimeMake(1, 2)
-    captureDevice.activeVideoMaxFrameDuration =  CMTimeMake(1, 2)
-    captureDevice.unlockForConfiguration()
+        try? captureDevice.lockForConfiguration()
+            captureDevice.activeVideoMinFrameDuration =  CMTimeMake(1, 2)
+            captureDevice.activeVideoMaxFrameDuration =  CMTimeMake(1, 2)
+            captureDevice.unlockForConfiguration()
         
-    guard let input = try? AVCaptureDeviceInput(device: captureDevice)
-        else { self.quickErr(myLine: #line,inputStr: "") ; return }
-    captureSession.addInput(input)
-    captureSession.startRunning()
+        guard let input = try? AVCaptureDeviceInput(device: captureDevice)
+            else { self.quickErr(myLine: #line,inputStr: "") ; return }
+        captureSession.addInput(input)
+        captureSession.startRunning()
         
-    self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-    self.previewLayer?.frame.size = self.innerView.frame.size
-    self.previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-    self.innerView.layer.addSublayer(self.previewLayer!)
-    self.previewLayer?.frame = view.frame
+        self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        self.previewLayer?.frame.size = self.innerView.frame.size
+        self.previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        self.innerView.layer.addSublayer(self.previewLayer!)
+        self.previewLayer?.frame = view.frame
     
-    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-    label.center = CGPoint(x: 160, y: 285)
-    label.textAlignment = .center
-    label.text = "I'am a test label"
-    self.view.addSubview(label)
-    label.text = ""
+//        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+//        label.center = CGPoint(x: 160, y: 285)
+//        label.textAlignment = .center
+//        label.text = "I'am a test label"
+//        self.view.addSubview(label)
+//        label.text = ""
         
-    //get access to video frames
-    let dataOutput = AVCaptureVideoDataOutput()
-    dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "VideoQueue"))
-    captureSession.addOutput(dataOutput)
+        //get access to video frames
+        let dataOutput = AVCaptureVideoDataOutput()
+        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "VideoQueue"))
+        captureSession.addOutput(dataOutput)
         
     }
-
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
